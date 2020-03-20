@@ -1,0 +1,108 @@
+
+.board {
+  margin: 100px auto;
+  height: 60vh;
+  width: 60vw;
+  display: grid;
+  align-content: flex-start;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 5% 19% 19% 19% 19% 19% ;
+}
+
+.square, 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline:1px solid #333;
+  padding: 10px;
+  text-align: center;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.square {
+  cursor: pointer;
+  background-color: white;
+  line-height: 1.5rem;
+}
+.square.selected {
+  background-color: lightcoral
+}
+.header{
+  outline:1px solid #ccc;
+  background-color: #476eb9;
+  color: #ccc;
+  font-weight: bolder;
+}
+
+.winner {
+  position: fixed;
+  top: 100px;
+  left: calc(50% - 285px);
+  border: 4px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  background: lightgreen;
+  padding: 50px 100px;
+  border-radius: 4px;
+} 
+.winner h2 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 50px;
+  font-size: 74px;
+  color: darkgreen;
+}
+.winner a {
+  color: darkgreen;
+  text-decoration: none;
+}
+.winner a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .board {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+  .header, 
+  .square {
+    font-size: smaller;
+    line-height: 1rem;
+  }
+  .winner {
+    left: calc(50% - 162px);
+  }
+  .winner h2 {
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .board {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+  .header, 
+  .square {
+    font-size: smaller;
+    line-height: 1.1rem;
+  }
+  .winner {
+    left: calc(50% - 162px);
+  }
+  .winner h2 {
+    font-size: 23px;
+
+    border-radius: 29;
+
+  }
+}
